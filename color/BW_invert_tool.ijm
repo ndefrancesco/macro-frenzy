@@ -24,9 +24,13 @@ macro "B/W invert Action Tool - R00ff F808f Cfff F117e Cf80 O33aa O4488" {
 	setThreshold(0, 127);
 	run("Create Selection");
 	resetThreshold();
+if (selectionType>-1) {
 	run("Add...", "value=128 slice");
+	}
 	run("Make Inverse");
-	run("Subtract...", "value=128 slice");
+	if (selectionType>-1){
+ 	   run("Subtract...", "value=128 slice");
+	}
 	run("Select None");
 	run("RGB Color");
 	if (useGamma) run("Gamma...", "value=&gammaValue");
