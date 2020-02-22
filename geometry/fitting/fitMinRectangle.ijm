@@ -12,7 +12,7 @@ Overlay.addSelection;
 Overlay.show;
 run("Restore Selection");
 
-function fiMintRectangle(){
+function fitMinRectangle(){
 	// fits a minimum area rectangle into a ROI, based on the minimum Feret diameter
 	run("Convex Hull");
 	getSelectionCoordinates(xp, yp);
